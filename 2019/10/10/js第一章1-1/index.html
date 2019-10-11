@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>js第一章1-1 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#这是第一章的内容呢！！！！！！">
+  <meta name="description" content="#这是第一章的内容呢！！！！！！ package mg;/**  实体类Student与数据库中的表（id，name，pwd,add,tel,major）对应 @author Administrator  /  public class Student {    private int id;    private String name;    private String pwd;    pu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js第一章1-1">
 <meta property="og:url" content="http://yoursite.com/2019/10/10/js第一章1-1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="#这是第一章的内容呢！！！！！！">
+<meta property="og:description" content="#这是第一章的内容呢！！！！！！ package mg;/**  实体类Student与数据库中的表（id，name，pwd,add,tel,major）对应 @author Administrator  /  public class Student {    private int id;    private String name;    private String pwd;    pu">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-10T12:28:36.736Z">
+<meta property="og:updated_time" content="2019-10-11T02:06:31.042Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js第一章1-1">
-<meta name="twitter:description" content="#这是第一章的内容呢！！！！！！">
+<meta name="twitter:description" content="#这是第一章的内容呢！！！！！！ package mg;/**  实体类Student与数据库中的表（id，name，pwd,add,tel,major）对应 @author Administrator  /  public class Student {    private int id;    private String name;    private String pwd;    pu">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -175,6 +175,46 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>#这是第一章的内容呢！！！！！！</p>
+<p>package mg;<br>/**</p>
+<ul>
+<li>实体类Student与数据库中的表（id，name，pwd,add,tel,major）对应</li>
+<li>@author Administrator</li>
+<li></li>
+<li>/</li>
+</ul>
+<p>public class Student {<br>    private int id;<br>    private String name;<br>    private String pwd;<br>    public String getAdd() {<br>        return add;<br>    }<br>    public void setAdd(String add) {<br>        this.add = add;<br>    }<br>    public String getTel() {<br>        return tel;<br>    }<br>    public void setTel(String tel) {<br>        this.tel = tel;<br>    }<br>    public String getMajor() {<br>        return major;<br>    }<br>    public void setMajor(String major) {<br>        this.major = major;<br>    }<br>    private String add;<br>    private String tel;<br>    private String major;<br>    public int getId() {<br>        return id;<br>    }<br>    public void setId(int id) {<br>        this.id = id;<br>    }<br>    public String getName() {<br>        return name;<br>    }<br>    public void setName(String name) {<br>        this.name = name;<br>    }<br>    public String getPwd() {<br>        return pwd;<br>    }<br>    public void setPwd(String pwd) {<br>        this.pwd = pwd;<br>    }<br>    //构造方法的重载<br>    public Student() {<br>        super();<br>        // TODO Auto-generated constructor stub<br>    }</p>
+<pre><code>public Student(int id, String name, String pwd, String add, String tel, String major) {
+    super();
+    this.id = id;
+    this.name = name;
+    this.pwd = pwd;
+    this.add = add;
+    this.tel = tel;
+    this.major = major;
+}
+@Override
+public String toString() {
+    return &quot;Student [id=&quot; + id + &quot;, name=&quot; + name + &quot;, pwd=&quot; + pwd + &quot;, add=&quot; + add + &quot;, tel=&quot; + tel + &quot;, major=&quot;
+            + major + &quot;, getAdd()=&quot; + getAdd() + &quot;, getTel()=&quot; + getTel() + &quot;, getMajor()=&quot; + getMajor()
+            + &quot;, getId()=&quot; + getId() + &quot;, getName()=&quot; + getName() + &quot;, getPwd()=&quot; + getPwd() + &quot;, getClass()=&quot;
+            + getClass() + &quot;, hashCode()=&quot; + hashCode() + &quot;, toString()=&quot; + super.toString() + &quot;]&quot;;
+}</code></pre><p>​<br>}</p>
+<p>package mg;</p>
+<p>public class Text {</p>
+<pre><code>public static void main(String[] args) {
+    // TODO Auto-generated method stub
+    Student stu=new Student();
+    stu.setId(12);
+    stu.setName(&quot;mg&quot;);
+    stu.setPwd(&quot;123&quot;);
+    stu.setMajor(&quot;大一&quot;);
+    stu.setAdd(&quot;郑州&quot;);
+    stu.setTel(&quot;13598001477&quot;);
+    Student stu2=new Student(10,&quot;san&quot;,&quot;321&quot;,&quot;新郑&quot;,&quot;19903839650&quot;,&quot;大二&quot;);
+    System.out.println(&quot;序号：&quot;+stu.getId()+&quot;姓名：&quot;+stu.getName()+&quot;密码：&quot;+stu.getPwd()+
+            &quot;住址：&quot;+stu.getAdd()+&quot;年级&quot;+stu.getMajor()+&quot;电话：&quot;+stu.getTel());
+    System.out.println(stu.toString());
+}</code></pre><p>}</p>
 
       
 
