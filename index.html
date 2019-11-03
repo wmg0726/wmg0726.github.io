@@ -152,6 +152,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JSP-Servlet" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/03/JSP-Servlet/">JSP/Servlet</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/03/JSP-Servlet/" class="archive-article-date">
+  	<time datetime="2019-11-03T07:02:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、相同点： </p>
+<p>1 处理后台逻辑，作为mvc控制； 2 9个内置对象(request、response、session、application、page、out、 </p>
+<p>config、pageContext、exception)，内置对象作用域：page &lt; request/response &lt; session &lt; application。 </p>
+<p>page.setAttribute(“username”,”sam”); String id = page.getAttribute(“username”); </p>
+<p>request.setAttribute(“username”,”sam”); String id = request.getAttribute(“username”); </p>
+<p>session.setAttribute(“username”,”sam”); String id = session.getAttribute(“username”); </p>
+<p>application.setAttribute(“username”,”sam”); String id = application.getAttribute(“username”); </p>
+<p>3 都可用Java语言。 </p>
+<p>二、不同点： </p>
+<p>1 JSP可作为前端显示页面，Servlet只能作后台控制； 2 JSP可内嵌html、EL、JSTL和Java，而Servlet只能有 </p>
+<p>Java； 3 JSP控制不需要项目中去注册、而Servlet必须注册(web.xml/注解) 4 JSP常作为小型项目，Servlet常用作 </p>
+<p>框架类的大型项目； </p>
+<p>拓展： </p>
+<p>Spring、SpringMVC(Struts2.0)、MyBatis SSM </p>
+<p>SpringBoot SpringCloud</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/03/JSP-Servlet/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-实现登录注册功能（连接数据库）的JSP小项目" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>实现登录注册功能（连接数据库）的JSP小项目 | Hexo</title>
+  <title>JSP/Servlet | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、实现登录功能 首先用sublime制作有表单检查功能的login.html，代码具体如下： https://wmg0726.github.io\imgs\a.png 为了简洁，我在Eclipse里将CSS的引用方式改为链入式了，而接下来是在sublime刚做好后的代码截图： https://wmg0726.github.io\imgs\b.jpg https://wmg0726.github.">
+  <meta name="description" content="一、相同点：  1 处理后台逻辑，作为mvc控制； 2 9个内置对象(request、response、session、application、page、out、  config、pageContext、exception)，内置对象作用域：page &amp;lt; request/response &amp;lt; session &amp;lt; application。  page.setAttribute(“u">
 <meta property="og:type" content="article">
-<meta property="og:title" content="实现登录注册功能（连接数据库）的JSP小项目">
-<meta property="og:url" content="http://yoursite.com/2019/11/03/实现登录注册功能（连接数据库）的JSP小项目/index.html">
+<meta property="og:title" content="JSP&#x2F;Servlet">
+<meta property="og:url" content="http://yoursite.com/2019/11/03/JSP-Servlet/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、实现登录功能 首先用sublime制作有表单检查功能的login.html，代码具体如下： https://wmg0726.github.io\imgs\a.png 为了简洁，我在Eclipse里将CSS的引用方式改为链入式了，而接下来是在sublime刚做好后的代码截图： https://wmg0726.github.io\imgs\b.jpg https://wmg0726.github.">
+<meta property="og:description" content="一、相同点：  1 处理后台逻辑，作为mvc控制； 2 9个内置对象(request、response、session、application、page、out、  config、pageContext、exception)，内置对象作用域：page &amp;lt; request/response &amp;lt; session &amp;lt; application。  page.setAttribute(“u">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-03T06:29:39.035Z">
+<meta property="og:updated_time" content="2019-11-03T07:04:52.845Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="实现登录注册功能（连接数据库）的JSP小项目">
-<meta name="twitter:description" content="一、实现登录功能 首先用sublime制作有表单检查功能的login.html，代码具体如下： https://wmg0726.github.io\imgs\a.png 为了简洁，我在Eclipse里将CSS的引用方式改为链入式了，而接下来是在sublime刚做好后的代码截图： https://wmg0726.github.io\imgs\b.jpg https://wmg0726.github.">
+<meta name="twitter:title" content="JSP&#x2F;Servlet">
+<meta name="twitter:description" content="一、相同点：  1 处理后台逻辑，作为mvc控制； 2 9个内置对象(request、response、session、application、page、out、  config、pageContext、exception)，内置对象作用域：page &amp;lt; request/response &amp;lt; session &amp;lt; application。  page.setAttribute(“u">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,63 +154,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-实现登录注册功能（连接数据库）的JSP小项目" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JSP-Servlet" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      实现登录注册功能（连接数据库）的JSP小项目
+      JSP/Servlet
     </h1>
   
 
         
-        <a href="/2019/11/03/实现登录注册功能（连接数据库）的JSP小项目/" class="archive-article-date">
-  	<time datetime="2019-11-03T06:10:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
+        <a href="/2019/11/03/JSP-Servlet/" class="archive-article-date">
+  	<time datetime="2019-11-03T07:02:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一、实现登录功能</p>
-<p>首先用sublime制作有表单检查功能的login.html，代码具体如下：</p>
-<p><a href="https://wmg0726.github.io\imgs\a.png" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\a.png</a></p>
-<p>为了简洁，我在Eclipse里将CSS的引用方式改为链入式了，而接下来是在sublime刚做好后的代码截图：</p>
-<p><a href="https://wmg0726.github.io\imgs\b.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\b.jpg</a></p>
-<p><a href="https://wmg0726.github.io\imgs\c.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\c.jpg</a></p>
-<p><a href="https://wmg0726.github.io\imgs\d.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\d.jpg</a></p>
-<p><a href="https://wmg0726.github.io\imgs\e.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\e.jpg</a></p>
-<p><a href="https://wmg0726.github.io\imgs\f.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\f.jpg</a></p>
-<p><a href="https://wmg0726.github.io\imgs\g.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\g.jpg</a></p>
-<p>然后将<form>改为&lt;formaction=”chk_login.jsp” method=”post” name=”Login”target=”_parent” id=”Login” onSubmit=”retutnCheckForm();”&gt;</form></p>
-<p>最终效果如下：</p>
-<p><a href="https://wmg0726.github.io\imgs\h.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\h.jpg</a></p>
-<p>二、设计一个数据库</p>
-<p>（1）建立data文件夹</p>
-<pre><code>新建qiye.mdb。</code></pre><p>（2）建立表admin</p>
-<p>输入数据</p>
-<p>这里创建了一个初始管理员账号。</p>
-<p> 三、实现检查登录界面与数据库连接</p>
-<p>制作好之后将数据库文件放入项目文件夹，设计完成登陆功能的chk_login.jsp，实现Eclipse与数据库文件的连接：</p>
-<p><a href="https://wmg0726.github.io\imgs\i.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\i.jpg</a></p>
-<p><a href="https://wmg0726.github.io\imgs\j.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\j.jpg</a></p>
-<p>经测试，确定数据库连接成功后，再在Seession.jsp（登录之后的主页面）中加入以下程序以阻止非法用户的访问:</p>
-<p><a href="https://wmg0726.github.io\imgs\k.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\k.jpg</a></p>
-<p>最后，设计Top.jsp，完成退出登录的功能：</p>
-<p><a href="https://wmg0726.github.io\imgs\l.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\l.jpg</a></p>
-<p><a href="https://wmg0726.github.io\imgs\m.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\m.jpg</a></p>
-<p>四、实现注册功能</p>
-<p>首先还是用sublime制作有表单检查功能的regester.html</p>
-<p><a href="https://wmg0726.github.io\imgs\n.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\n.jpg</a></p>
-<p>这里只截取验证表单的JS代码，其余的跟login.html差不多，就表单稍微改了一下</p>
-<p>另外注意一下表单里的<form>要改为&lt;formaction=”add.jsp” method=”post” name=”Login”target=”_parent” id=”Login” onSubmit=”returnCheckForm();”&gt;</form></p>
-<p>然后设计完成登陆功能的add.jsp，实现与数据库文件的连接，具体代码如下：<br><a href="https://wmg0726.github.io\imgs\o.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\o.jpg</a></p>
-<p><a href="https://wmg0726.github.io\imgs\p.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\p.jpg</a></p>
-<p>最后，验证一下，登录时账号密码错误或为空，注册时两次输入的密码不一致时都会出现这个：</p>
-<p><a href="https://wmg0726.github.io\imgs\q.png" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\q.png</a></p>
-<p>这样一来项目就成功了(^o^)/~</p>
+        <p>一、相同点： </p>
+<p>1 处理后台逻辑，作为mvc控制； 2 9个内置对象(request、response、session、application、page、out、 </p>
+<p>config、pageContext、exception)，内置对象作用域：page &lt; request/response &lt; session &lt; application。 </p>
+<p>page.setAttribute(“username”,”sam”); String id = page.getAttribute(“username”); </p>
+<p>request.setAttribute(“username”,”sam”); String id = request.getAttribute(“username”); </p>
+<p>session.setAttribute(“username”,”sam”); String id = session.getAttribute(“username”); </p>
+<p>application.setAttribute(“username”,”sam”); String id = application.getAttribute(“username”); </p>
+<p>3 都可用Java语言。 </p>
+<p>二、不同点： </p>
+<p>1 JSP可作为前端显示页面，Servlet只能作后台控制； 2 JSP可内嵌html、EL、JSTL和Java，而Servlet只能有 </p>
+<p>Java； 3 JSP控制不需要项目中去注册、而Servlet必须注册(web.xml/注解) 4 JSP常作为小型项目，Servlet常用作 </p>
+<p>框架类的大型项目； </p>
+<p>拓展： </p>
+<p>Spring、SpringMVC(Struts2.0)、MyBatis SSM </p>
+<p>SpringBoot SpringCloud</p>
 
       
 
@@ -290,7 +268,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/03/实现登录注册功能（连接数据库）的JSP小项目/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/03/JSP-Servlet/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -304,18 +282,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/11/03/JSP-Servlet/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          JSP/Servlet
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/10/28/JSP知识点/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JSP知识点</div>
+    <a href="/2019/11/03/实现登录注册功能（连接数据库）的JSP小项目/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">实现登录注册功能（连接数据库）的JSP小项目</div>
       <i class="icon-circle-right"></i>
     </a>
   
