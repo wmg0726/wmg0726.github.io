@@ -152,6 +152,125 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JSP连接数据库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/05/JSP连接数据库/">JSP连接数据库</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/05/JSP连接数据库/" class="archive-article-date">
+  	<time datetime="2019-11-05T01:08:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>static final String DRIVER = “com.mysql.jdbc.Driver”;<br>    static final String URL = “jdbc:mysql://127.0.0.1:3306/his”;<br>    static final String USERNAME = “root”;<br>    static final String PWD = “root”;</p>
+<pre><code>protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    // TODO Auto-generated method stub
+    request.setCharacterEncoding(&quot;utf-8&quot;);//request
+    response.setContentType(&quot;text/html;charset=utf-8&quot;);//response
+    String id=request.getParameter(&quot;username&quot;);////
+    String pwd=request.getParameter(&quot;password&quot;);//
+    Connection connection = null;
+    Statement statement = null;
+    ResultSet rs =null;
+    try{        
+      Class.forName(DRIVER);
+      connection = DriverManager.getConnection(URL,USERNAME,PWD);
+       statement = connection.createStatement();
+       String sql = &quot;select * from user;&quot;; 
+       rs = statement.executeQuery(sql);
+       while (rs.next()) {
+           if (request.getParameter(&quot;username&quot;).equals(rs.getString(&quot;username&quot;))&amp;&amp;
+                      request.getParameter(&quot;password&quot;).equals(rs.getString(&quot;password&quot;))) {
+                request.getRequestDispatcher(&quot;index1.jsp&quot;).forward(request, response);
+            } else {
+                response.getWriter().print(&quot;用户名或密码有误，请重新输 入！&quot;);
+            }
+
+    }
+    }
+    catch (ClassNotFoundException e){        
+        System.out.println(e.getMessage());
+        System.exit(0);
+    }
+    catch (SQLException e){            
+        System.out.println(e.getMessage());
+        System.exit(0);
+    }
+    catch (Exception e){        
+    }
+    finally {
+        try {
+            statement.close();
+        } catch (SQLException e) {
+            // TODO 自动生成的 catch 块
+            e.printStackTrace();
+        }
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            // TODO 自动生成的 catch 块
+            e.printStackTrace();
+        }
+        try {
+            rs.close();
+        } catch (SQLException e) {
+            // TODO 自动生成的 catch 块
+            e.printStackTrace();
+        }</code></pre><p><a href="https://wmg0726.github.io\C:\imgs1\1.png" target="_blank" rel="noopener">https://wmg0726.github.io\C:\imgs1\1.png</a></p>
+<p><a href="https://wmg0726.github.io\C:\imgs1\2.png" target="_blank" rel="noopener">https://wmg0726.github.io\C:\imgs1\2.png</a></p>
+<p><a href="https://wmg0726.github.io\C:\imgs1\3.png" target="_blank" rel="noopener">https://wmg0726.github.io\C:\imgs1\3.png</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/05/JSP连接数据库/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JSP-Servlet" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
