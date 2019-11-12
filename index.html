@@ -152,6 +152,69 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-数据库中的相关语句" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/12/数据库中的相关语句/">数据库中的相关语句</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/12/数据库中的相关语句/" class="archive-article-date">
+  	<time datetime="2019-11-12T01:18:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>distinct作用于所有列而不仅是紧跟在其后的一列<br>select prod_name from products<br>limit 5;#返回5行<br>select prod_name from products<br>limit 5 offset 5;                                      #返回从第5行起的5行数据：limit 开始 offset 行数<br>例：select prod_id,prod_price from products limit 3 OFFSET 1;//从offset限制第一行往后起，输出三行<br>二、注释<br>行内注释：–注释<br>行内注释：#注释<br>多行注释：/<em>注释</em>/<br>select prod_id,prod_price,prod_name from products<br>order by prod_price desc,prod_name;                   #对price降序，name升序，注意desc只应用到直接位于其前面的列名<br>select prod_name from products<br>where prod_price is null;                                         #检查空值<br> #in操作符，与or等价<br> #not操作符，否定跟在其后的条件，等价于：where vend_id &lt;&gt;’DLL01’<br>五、汇总数据<br>select avg(prod_price) as avg_price                     #avg()用于求均值，只用于单列，忽略列值为null的行<br>from products;<br>select count(*) as num_cust from customers;      #计算表中行的数目，不忽略空值<br>select count(cust_email) as num_cust                 #计算指定列中具有值的行数，掠过空值<br>from customers;<br>select max(prod_price） as max_price                #返回最大价格，忽略空值<br>from products;<br>select min(prod_price） as min_price                  #返回最低价格，忽略空值<br>from products;<br>select sum(quantity) as items_ordered                #求和，忽略空值<br>from orderitems;<br>七、子查询<br>select cust_id from orders<br>where order_num in(select order_num from orderitems<br>                   where prod_id=’RGAN01’);               #由内向外执行<br>等价于：<br>select order_num from orderitems<br>where prod_id=’RGAN01’;<br>八、联结表<br>#内连接（等值连接）<br>select vend_name,prod_name,prod_price<br>from vendors inner join products<br>on vendors.vend_id=products.vend_id;            #连接条件为vendors.vend_id=products.vend_id<br>等价于：<br>select vend_name,prod_name,prod_price<br>from vendors,products<br>where vendors.vend_id=products.vend_id;<br>#自连接<br>select c1.cust_id,c1.cust_name,c1.cust_contact<br>from customers as c1,customers as c2              #使用表别名<br>where c1.cust_name=c2.cust_name<br>and c2.cust_contact=’jim jones’;<br>等价于：<br>select cust_id,cust_name,cust_contact<br>from customers<br>where cust_name=(select cust_name<br>                 from customers<br>                 where cust_contact=’jim jones’);<br>#外连接<br>select customers.cust_id,orders.order_num<br>from customers left outer join orders<br>on customers.cust_id=orders.cust_id;                 #左外连接，left指定from子句左边的表（customers)选择所有行</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/12/数据库中的相关语句/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-MySQL数据库增删改查SQL语句" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1043,109 +1106,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/10/22/课堂笔记1021/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js第一章1-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/10/js第一章1-1/">js第一章1-1</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/10/js第一章1-1/" class="archive-article-date">
-  	<time datetime="2019-10-10T12:27:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#这是第一章的内容呢！！！！！！</p>
-<p>package mg;<br>/**</p>
-<ul>
-<li>实体类Student与数据库中的表（id，name，pwd,add,tel,major）对应</li>
-<li>@author Administrator</li>
-<li></li>
-<li>/</li>
-</ul>
-<p>public class Student {<br>    private int id;<br>    private String name;<br>    private String pwd;<br>    public String getAdd() {<br>        return add;<br>    }<br>    public void setAdd(String add) {<br>        this.add = add;<br>    }<br>    public String getTel() {<br>        return tel;<br>    }<br>    public void setTel(String tel) {<br>        this.tel = tel;<br>    }<br>    public String getMajor() {<br>        return major;<br>    }<br>    public void setMajor(String major) {<br>        this.major = major;<br>    }<br>    private String add;<br>    private String tel;<br>    private String major;<br>    public int getId() {<br>        return id;<br>    }<br>    public void setId(int id) {<br>        this.id = id;<br>    }<br>    public String getName() {<br>        return name;<br>    }<br>    public void setName(String name) {<br>        this.name = name;<br>    }<br>    public String getPwd() {<br>        return pwd;<br>    }<br>    public void setPwd(String pwd) {<br>        this.pwd = pwd;<br>    }<br>    //构造方法的重载<br>    public Student() {<br>        super();<br>        // TODO Auto-generated constructor stub<br>    }</p>
-<pre><code>public Student(int id, String name, String pwd, String add, String tel, String major) {
-    super();
-    this.id = id;
-    this.name = name;
-    this.pwd = pwd;
-    this.add = add;
-    this.tel = tel;
-    this.major = major;
-}
-@Override
-public String toString() {
-    return &quot;Student [id=&quot; + id + &quot;, name=&quot; + name + &quot;, pwd=&quot; + pwd + &quot;, add=&quot; + add + &quot;, tel=&quot; + tel + &quot;, major=&quot;
-            + major + &quot;, getAdd()=&quot; + getAdd() + &quot;, getTel()=&quot; + getTel() + &quot;, getMajor()=&quot; + getMajor()
-            + &quot;, getId()=&quot; + getId() + &quot;, getName()=&quot; + getName() + &quot;, getPwd()=&quot; + getPwd() + &quot;, getClass()=&quot;
-            + getClass() + &quot;, hashCode()=&quot; + hashCode() + &quot;, toString()=&quot; + super.toString() + &quot;]&quot;;
-}</code></pre><p>​<br>}</p>
-<p>package mg;</p>
-<p>public class Text {</p>
-<pre><code>public static void main(String[] args) {
-    // TODO Auto-generated method stub
-    Student stu=new Student();
-    stu.setId(12);
-    stu.setName(&quot;mg&quot;);
-    stu.setPwd(&quot;123&quot;);
-    stu.setMajor(&quot;大一&quot;);
-    stu.setAdd(&quot;郑州&quot;);
-    stu.setTel(&quot;13598001477&quot;);
-    Student stu2=new Student(10,&quot;san&quot;,&quot;321&quot;,&quot;新郑&quot;,&quot;19903839650&quot;,&quot;大二&quot;);
-    System.out.println(&quot;序号：&quot;+stu.getId()+&quot;姓名：&quot;+stu.getName()+&quot;密码：&quot;+stu.getPwd()+
-            &quot;住址：&quot;+stu.getAdd()+&quot;年级&quot;+stu.getMajor()+&quot;电话：&quot;+stu.getTel());
-    System.out.println(stu.toString());
-}</code></pre><p>}</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/10/js第一章1-1/">展开全文 >></a>
         </p>
       
 

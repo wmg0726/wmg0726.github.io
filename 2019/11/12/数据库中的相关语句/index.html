@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>数据库中的相关语句 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="description" content="distinct作用于所有列而不仅是紧跟在其后的一列select prod_name from productslimit 5;#返回5行select prod_name from productslimit 5 offset 5;                                      #返回从第5行起的5行数据：limit 开始 offset 行数例：select prod_">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库中的相关语句">
+<meta property="og:url" content="http://yoursite.com/2019/11/12/数据库中的相关语句/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="distinct作用于所有列而不仅是紧跟在其后的一列select prod_name from productslimit 5;#返回5行select prod_name from productslimit 5 offset 5;                                      #返回从第5行起的5行数据：limit 开始 offset 行数例：select prod_">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-12T01:19:05.654Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="数据库中的相关语句">
+<meta name="twitter:description" content="distinct作用于所有列而不仅是紧跟在其后的一列select prod_name from productslimit 5;#返回5行select prod_name from productslimit 5 offset 5;                                      #返回从第5行起的5行数据：limit 开始 offset 行数例：select prod_">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,72 +154,51 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-js第一章1-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-数据库中的相关语句" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/10/js第一章1-1/">js第一章1-1</a>
+    <h1 class="article-title" itemprop="name">
+      数据库中的相关语句
     </h1>
   
 
         
-        <a href="/2019/10/10/js第一章1-1/" class="archive-article-date">
-  	<time datetime="2019-10-10T12:27:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-10</time>
+        <a href="/2019/11/12/数据库中的相关语句/" class="archive-article-date">
+  	<time datetime="2019-11-12T01:18:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#这是第一章的内容呢！！！！！！</p>
-<p>package mg;<br>/**</p>
-<ul>
-<li>实体类Student与数据库中的表（id，name，pwd,add,tel,major）对应</li>
-<li>@author Administrator</li>
-<li></li>
-<li>/</li>
-</ul>
-<p>public class Student {<br>    private int id;<br>    private String name;<br>    private String pwd;<br>    public String getAdd() {<br>        return add;<br>    }<br>    public void setAdd(String add) {<br>        this.add = add;<br>    }<br>    public String getTel() {<br>        return tel;<br>    }<br>    public void setTel(String tel) {<br>        this.tel = tel;<br>    }<br>    public String getMajor() {<br>        return major;<br>    }<br>    public void setMajor(String major) {<br>        this.major = major;<br>    }<br>    private String add;<br>    private String tel;<br>    private String major;<br>    public int getId() {<br>        return id;<br>    }<br>    public void setId(int id) {<br>        this.id = id;<br>    }<br>    public String getName() {<br>        return name;<br>    }<br>    public void setName(String name) {<br>        this.name = name;<br>    }<br>    public String getPwd() {<br>        return pwd;<br>    }<br>    public void setPwd(String pwd) {<br>        this.pwd = pwd;<br>    }<br>    //构造方法的重载<br>    public Student() {<br>        super();<br>        // TODO Auto-generated constructor stub<br>    }</p>
-<pre><code>public Student(int id, String name, String pwd, String add, String tel, String major) {
-    super();
-    this.id = id;
-    this.name = name;
-    this.pwd = pwd;
-    this.add = add;
-    this.tel = tel;
-    this.major = major;
-}
-@Override
-public String toString() {
-    return &quot;Student [id=&quot; + id + &quot;, name=&quot; + name + &quot;, pwd=&quot; + pwd + &quot;, add=&quot; + add + &quot;, tel=&quot; + tel + &quot;, major=&quot;
-            + major + &quot;, getAdd()=&quot; + getAdd() + &quot;, getTel()=&quot; + getTel() + &quot;, getMajor()=&quot; + getMajor()
-            + &quot;, getId()=&quot; + getId() + &quot;, getName()=&quot; + getName() + &quot;, getPwd()=&quot; + getPwd() + &quot;, getClass()=&quot;
-            + getClass() + &quot;, hashCode()=&quot; + hashCode() + &quot;, toString()=&quot; + super.toString() + &quot;]&quot;;
-}</code></pre><p>​<br>}</p>
-<p>package mg;</p>
-<p>public class Text {</p>
-<pre><code>public static void main(String[] args) {
-    // TODO Auto-generated method stub
-    Student stu=new Student();
-    stu.setId(12);
-    stu.setName(&quot;mg&quot;);
-    stu.setPwd(&quot;123&quot;);
-    stu.setMajor(&quot;大一&quot;);
-    stu.setAdd(&quot;郑州&quot;);
-    stu.setTel(&quot;13598001477&quot;);
-    Student stu2=new Student(10,&quot;san&quot;,&quot;321&quot;,&quot;新郑&quot;,&quot;19903839650&quot;,&quot;大二&quot;);
-    System.out.println(&quot;序号：&quot;+stu.getId()+&quot;姓名：&quot;+stu.getName()+&quot;密码：&quot;+stu.getPwd()+
-            &quot;住址：&quot;+stu.getAdd()+&quot;年级&quot;+stu.getMajor()+&quot;电话：&quot;+stu.getTel());
-    System.out.println(stu.toString());
-}</code></pre><p>}</p>
+        <p>distinct作用于所有列而不仅是紧跟在其后的一列<br>select prod_name from products<br>limit 5;#返回5行<br>select prod_name from products<br>limit 5 offset 5;                                      #返回从第5行起的5行数据：limit 开始 offset 行数<br>例：select prod_id,prod_price from products limit 3 OFFSET 1;//从offset限制第一行往后起，输出三行<br>二、注释<br>行内注释：–注释<br>行内注释：#注释<br>多行注释：/<em>注释</em>/<br>select prod_id,prod_price,prod_name from products<br>order by prod_price desc,prod_name;                   #对price降序，name升序，注意desc只应用到直接位于其前面的列名<br>select prod_name from products<br>where prod_price is null;                                         #检查空值<br> #in操作符，与or等价<br> #not操作符，否定跟在其后的条件，等价于：where vend_id &lt;&gt;’DLL01’<br>五、汇总数据<br>select avg(prod_price) as avg_price                     #avg()用于求均值，只用于单列，忽略列值为null的行<br>from products;<br>select count(*) as num_cust from customers;      #计算表中行的数目，不忽略空值<br>select count(cust_email) as num_cust                 #计算指定列中具有值的行数，掠过空值<br>from customers;<br>select max(prod_price） as max_price                #返回最大价格，忽略空值<br>from products;<br>select min(prod_price） as min_price                  #返回最低价格，忽略空值<br>from products;<br>select sum(quantity) as items_ordered                #求和，忽略空值<br>from orderitems;<br>七、子查询<br>select cust_id from orders<br>where order_num in(select order_num from orderitems<br>                   where prod_id=’RGAN01’);               #由内向外执行<br>等价于：<br>select order_num from orderitems<br>where prod_id=’RGAN01’;<br>八、联结表<br>#内连接（等值连接）<br>select vend_name,prod_name,prod_price<br>from vendors inner join products<br>on vendors.vend_id=products.vend_id;            #连接条件为vendors.vend_id=products.vend_id<br>等价于：<br>select vend_name,prod_name,prod_price<br>from vendors,products<br>where vendors.vend_id=products.vend_id;<br>#自连接<br>select c1.cust_id,c1.cust_name,c1.cust_contact<br>from customers as c1,customers as c2              #使用表别名<br>where c1.cust_name=c2.cust_name<br>and c2.cust_contact=’jim jones’;<br>等价于：<br>select cust_id,cust_name,cust_contact<br>from customers<br>where cust_name=(select cust_name<br>                 from customers<br>                 where cust_contact=’jim jones’);<br>#外连接<br>select customers.cust_id,orders.order_num<br>from customers left outer join orders<br>on customers.cust_id=orders.cust_id;                 #左外连接，left指定from子句左边的表（customers)选择所有行</p>
 
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -224,16 +207,75 @@ public String toString() {
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/10/js第一章1-1/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/12/数据库中的相关语句/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/08/MySQL数据库增删改查SQL语句/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MySQL数据库增删改查SQL语句</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -253,150 +295,14 @@ public String toString() {
 
 
 
-
-  
-    <article id="post-js第一章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/10/js第一章/">js第一章</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/10/js第一章/" class="archive-article-date">
-  	<time datetime="2019-10-10T06:49:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#第一张的内容</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/10/js第一章/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/10/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/10/hello-world/" class="archive-article-date">
-  	<time datetime="2019-10-10T03:51:12.006Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/10/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -419,8 +325,8 @@ public String toString() {
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
