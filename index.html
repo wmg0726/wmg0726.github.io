@@ -152,6 +152,70 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JSP登录流程梳理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/21/JSP登录流程梳理/">JSP登录流程梳理</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/21/JSP登录流程梳理/" class="archive-article-date">
+  	<time datetime="2019-11-21T02:33:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>JSP登录<br>1.表单提交数据到Servlet的方式<br>整体流程：登录页面提交form表单(get或post方式到action指定的位置)的数据到一个Servlet，在其内进行判定是否登录。<br>(1)Servlet中的doPost()方法：<br>    A.用Request.getParameter(“[input标签的name属性名]”)方法获取登录页面提交过来的表单数据。<br>    B.通过sql的JDBC的Jar包导入，进行数据库连接(连接代码见以往的连接代码)，用sql(类似于select * from user where id =’’, pwd=’’;)查询语句。<br>    C.比对判定以上两项的数据，页面跳转(“转发”和”重定向”两种方式取其一)。<br>(2)跳转到的页面：登录成功页面(在Session中保存用户信息)/不跳转</p>
+<p>2.表单提交数据到JSP的方式<br>整体流程：登录页面提交form表单(get或post方式到action指定的位置)的数据到一个JSP，在其内进行判定是否登录。<br>(1)JSP中的&lt;% %&gt;脚本内容：<br>    A.用Request.getParameter(“[input标签的name属性名]”)方法获取登录页面提交过来的表单数据。<br>    B.通过sql的JDBC的Jar包导入，进行数据库连接(连接代码见以往的连接代码)，用sql(类似于select * from user where id =’’, pwd=’’;)查询语句。<br>    C.比对判定以上两项的数据，页面跳转(“转发”和”重定向”两种方式取其一)。<br>(2)跳转到的页面：登录成功页面(在Session中保存用户信息)/重定向到登录JSP页面，为地址栏添加一个属性(response.sendRedirect(“index.jsp?info=”登录失败”))</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/21/JSP登录流程梳理/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JSP后注销" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1014,91 +1078,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/11/03/实现登录注册功能（连接数据库）的JSP小项目/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JSP知识点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/28/JSP知识点/">JSP知识点</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/28/JSP知识点/" class="archive-article-date">
-  	<time datetime="2019-10-28T01:04:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>访问数据库步骤：<br>1 获取Connection对象（DBConnection提供数据库连接对象Connection）<br>2 sql语句<br>3sql语句传入Connection，获取PreparedStatement对象<br>4执行（execute）语句.</p>
-<p>JSP九大内置对象（后台逻辑控制）：</p>
-<p>request请求  respose相应 session会话 application 应用</p>
-<p> out pagecontext config page exception </p>
-<p>A.html-servlet-B.html</p>
-<hr>
-<p>. servlet 是用来注册Servlet的存放地址 servlet-name 这个是我们要注册servlet的名字 servlet-class 这个就 </p>
-<p>是指向我们要注册的servlet 的类地址, 要带包路径。</p>
-<p>3 / 6 </p>
-<p>\2. servlet-mapping 是用来配置我们注册的组件的访问路径 </p>
-<p>\3. servlet-name 要与前面写的servlet的名字一致 </p>
-<p>\4. url-pattern 配置这个组件的访问路径</p>
-<servlet> 
-
-<p><servlet-name>LoginServlet</servlet-name> </p>
-<p><servlet-class>sam.his.servlet.LoginServlet</servlet-class> <!--存放路径 -->  </p>
-</servlet> 
-
-<servlet-mapping> 
-
-<p><servlet-name>LoginServlet</servlet-name> &lt;!– 与上面的 </p>
-<p><servlet-name> 要一致 –&gt; </servlet-name></p>
-<p><url-pattern>/LoginServlet</url-pattern> <!-- 访问路径 --> </p>
-</servlet-mapping> 
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/28/JSP知识点/">展开全文 >></a>
         </p>
       
 
