@@ -152,6 +152,113 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-MVC设计模式在JSP中应用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/27/MVC设计模式在JSP中应用/">MVC设计模式在JSP中应用</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/27/MVC设计模式在JSP中应用/" class="archive-article-date">
+  	<time datetime="2019-11-27T01:59:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Servlet负责跳转，调度，(服务员）<br>Dao负责数据库增删改查（菜品）<br>ServiceDAO负责数据库增删改查的结果数据的加工（厨师）</p>
+<p>M （model模型）DAO负责数据库增删改查的table（User为例），对应的实体类（User.Java）<br>V （view视图）JSP页面（将跳转时传递到当前页面的数据，展示在当前页面中）<br>C （controller控制器）Service(DAO负责数据库增删改查的结果数据的加工) Servlet（决定调度跳转）到哪儿个页面。</p>
+<p>_JSP登录判定逻辑:</p>
+<pre><code>public void doPost(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+    System.out.println(&quot;------loginAction------&quot;);
+    request.setCharacterEncoding(&quot;UTF-8&quot;);
+    response.setCharacterEncoding(&quot;UTF-8&quot;);
+    response.setContentType(&quot;text/html; charset=UTF-8&quot;);
+    String username=request.getParameter(&quot;username&quot;);//从页面中获取
+    String password=request.getParameter(&quot;password&quot;);
+    System.out.println(&quot;获取login.jsp页面中的username &quot;+ username);
+    System.out.println(&quot;获取login.jsp页面中的password &quot;+ password);
+    System.out.println(&quot;登陆验证中...&quot;);
+    //连接并查询数据库
+    String sql = &quot;select * from user&quot;;
+    try {
+        //获取数据查询数据
+        ResultSet rs;
+        String sqlusername = rs.getString(&quot;username&quot;);
+        String sqlpassword = rs.getString(&quot;password&quot;);
+        String sqlname = rs.getString(&quot;name&quot;);
+        boolean flag = false;
+        //对比数据，判定登录
+        while(rs.next()) {
+            if(sqlusername.equals(username) &amp;&amp; sqlpassword.equals(password)) {
+                //放入用户信息到Session后，跳转
+                HttpSession session = request.getSession();
+                session.setAttribute(&quot;username&quot;, username);
+                session.setAttribute(&quot;password&quot;, sqlpassword);
+                session.setAttribute(&quot;name&quot;, sqlname);
+                response.sendRedirect(&quot;sucess.jsp&quot;);
+                flag= true;
+                break;
+            }
+        }
+        //登录失败
+        if(flag==false) {
+            //跳转回登录页面
+            response.sendRedirect(&quot;login.jsp&quot;);
+        }
+    } catch (SQLException e) {
+        // TODO 自动生成的 catch 块
+        e.printStackTrace();
+    }</code></pre><p>}</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/27/MVC设计模式在JSP中应用/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JSP登录流程梳理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -979,105 +1086,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/11/03/JSP-Servlet/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-实现登录注册功能（连接数据库）的JSP小项目" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/03/实现登录注册功能（连接数据库）的JSP小项目/">实现登录注册功能（连接数据库）的JSP小项目</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/03/实现登录注册功能（连接数据库）的JSP小项目/" class="archive-article-date">
-  	<time datetime="2019-11-03T06:10:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一、实现登录功能</p>
-<p>首先用sublime制作有表单检查功能的login.html，代码具体如下：</p>
-<p><a href="https://wmg0726.github.io\imgs\a.png" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\a.png</a></p>
-<p>为了简洁，我在Eclipse里将CSS的引用方式改为链入式了，而接下来是在sublime刚做好后的代码截图：</p>
-<p><a href="https://wmg0726.github.io\imgs\b.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\b.jpg</a></p>
-<p><a href="https://wmg0726.github.io\imgs\c.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\c.jpg</a></p>
-<p><a href="https://wmg0726.github.io\imgs\d.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\d.jpg</a></p>
-<p><a href="https://wmg0726.github.io\imgs\e.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\e.jpg</a></p>
-<p><a href="https://wmg0726.github.io\imgs\f.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\f.jpg</a></p>
-<p><a href="https://wmg0726.github.io\imgs\g.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\g.jpg</a></p>
-<p>然后将<form>改为&lt;formaction=”chk_login.jsp” method=”post” name=”Login”target=”_parent” id=”Login” onSubmit=”retutnCheckForm();”&gt;</form></p>
-<p>最终效果如下：</p>
-<p><a href="https://wmg0726.github.io\imgs\h.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\h.jpg</a></p>
-<p>二、设计一个数据库</p>
-<p>（1）建立data文件夹</p>
-<pre><code>新建qiye.mdb。</code></pre><p>（2）建立表admin</p>
-<p>输入数据</p>
-<p>这里创建了一个初始管理员账号。</p>
-<p> 三、实现检查登录界面与数据库连接</p>
-<p>制作好之后将数据库文件放入项目文件夹，设计完成登陆功能的chk_login.jsp，实现Eclipse与数据库文件的连接：</p>
-<p><a href="https://wmg0726.github.io\imgs\i.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\i.jpg</a></p>
-<p><a href="https://wmg0726.github.io\imgs\j.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\j.jpg</a></p>
-<p>经测试，确定数据库连接成功后，再在Seession.jsp（登录之后的主页面）中加入以下程序以阻止非法用户的访问:</p>
-<p><a href="https://wmg0726.github.io\imgs\k.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\k.jpg</a></p>
-<p>最后，设计Top.jsp，完成退出登录的功能：</p>
-<p><a href="https://wmg0726.github.io\imgs\l.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\l.jpg</a></p>
-<p><a href="https://wmg0726.github.io\imgs\m.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\m.jpg</a></p>
-<p>四、实现注册功能</p>
-<p>首先还是用sublime制作有表单检查功能的regester.html</p>
-<p><a href="https://wmg0726.github.io\imgs\n.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\n.jpg</a></p>
-<p>这里只截取验证表单的JS代码，其余的跟login.html差不多，就表单稍微改了一下</p>
-<p>另外注意一下表单里的<form>要改为&lt;formaction=”add.jsp” method=”post” name=”Login”target=”_parent” id=”Login” onSubmit=”returnCheckForm();”&gt;</form></p>
-<p>然后设计完成登陆功能的add.jsp，实现与数据库文件的连接，具体代码如下：<br><a href="https://wmg0726.github.io\imgs\o.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\o.jpg</a></p>
-<p><a href="https://wmg0726.github.io\imgs\p.jpg" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\p.jpg</a></p>
-<p>最后，验证一下，登录时账号密码错误或为空，注册时两次输入的密码不一致时都会出现这个：</p>
-<p><a href="https://wmg0726.github.io\imgs\q.png" target="_blank" rel="noopener">https://wmg0726.github.io\imgs\q.png</a></p>
-<p>这样一来项目就成功了(^o^)/~</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/03/实现登录注册功能（连接数据库）的JSP小项目/">展开全文 >></a>
         </p>
       
 
