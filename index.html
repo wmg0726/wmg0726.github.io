@@ -152,6 +152,126 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JSP12-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/02/JSP12-2/">JSP12.2</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/02/JSP12-2/" class="archive-article-date">
+  	<time datetime="2019-12-02T00:57:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>EL表达式:用于替代jsp页面中的Java代码<br>优势:<br>    不需要像java一样,<br>    进行强制类型转换,<br>    不需要处理null在EL中直接显示为空白<br>    简洁<br>    不需要&lt;%%&gt;表签,直接嵌入到jsp代码中<br>    防止代码参杂</p>
+<p>用法:<br>    ${域对象.域对象中的属性.属性.属性.,,,,,,,,,,,,,,,,,,,,,,,,,}<br>        &lt;不能包括特殊字符如.&gt;<br>          or<br>    ${域对象[‘域对象中的属性’][‘属性’][‘属性’].,,,,,,,,,,,,,,,,,,,,,,,,,}<br>        &lt;能包括特殊字符如.&gt;<br>        &lt;可获取变量值 ,这时[]中不加引号’’    加’’认为是常量&gt;<br>        &lt;可获取数组元素  stu[1],stu[2]…….&gt;</p>
+<pre><code> 获取Map属性
+${域对象.域对象中的map对象.属性名}
+    or
+${域对象.域对象中的map对象[&apos;属性名&apos;]}
+
+可直接在EL中计算:
+    gt    ne    eq    le    ge    lt
+    ${3 &gt; 2},${3 != 2},${3 == 2},${3 &lt;= 2},${3 &gt;= 2},${3 &lt; 2},
+
+    or    and    not
+    ${3 || 2},${3 &amp;&amp; 2}${3 ! 2},
+
+Empty运算符:用于判断一个值是否存在   存在有值返回false  / 为null或其他情况或不存在反回true 
+    ${empty 域对象.域对象中的map对象.属性名}</code></pre><p>EL表达式的隐式对象:<br>    a.作用域访问对象(EL  域对象)*<br>    pageScope    requestScope    sessionScope    applicationScope<br>    若用El取值时不指定域对象,则根据从    小范围   到   大范围    的顺序   依次取值<br>    如: ${requestScope.域对象中的map对象[‘属性名’]}</p>
+<pre><code>b.参数访问对象
+用于获取表单数据${param}            ${oaramValues}
+   对应于               repuest.getParameter()        repuest.getParameterValues()
+        单个表单数据            表单数组数据&lt;复选框..&gt;
+如: ${param.数据名}      ${param.数组数据名}    
+
+也可获取超链接中传的值,地址栏中的值
+
+c.JSP隐式对象
+    pageContext
+通过此pageContext对象可拿到JSP中任意常见隐式对象
+如:  ${pageContext.session.下一个方法或对象...}    &lt;不是.getSession()&gt;</code></pre><p>要实现分页要严格依赖SQL语句:<br>    前提:知道    那一页的数据从  何处开始   从  何处结束  </p>
+<pre><code>   使用sql关键字  limit n,x;
+    *(第n行开始  取 x条数据)*
+
+第n页            开始行号            结束行号    
+1            0            9
+2            10            19
+3            20            29
+.............................
+n            (n-1)*10            n*10-1
+
+转化为sql语句为:
+    select * from user limit 0,10;
+    select * from user limit 10,10;
+    select * from user limit 20,10;
+    .................................
+    select * from user limit (n-1)*10,10;
+
+即:   select * from user limit  &lt;页数*页面大小(每页行数)&gt;,&lt;页面大小(每页行数)&gt;;</code></pre><p>在dao及servle中使用:</p>
+<pre><code>需要数据:&lt;顺序&gt;
+    1.数据总量                &lt;查询数据库得知,select count(*)...;用rs保存&gt;
+    2.页面大小(每页行数)                &lt;自定义&gt;
+    3.总页数                    &lt;程序计算&gt;
+    总页数= 100/20=数据总数/页面大小=5页
+    总页数= 103/20=数据总数/页面大小=5.6--&gt;5+1页
+    总页数=数据总数%页面大小==0? 数据总数/页面大小:数据总数/页面大小+1
+    判断是否除尽根据是否除尽,执行不同操作
+
+    4.当前页码                &lt;自定义&gt;
+    由jsp页面传入
+
+    5.当前页所显示的数据对象集合(实体类集合)    &lt;查询得知&gt;</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/02/JSP12-2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-MVC设计模式在JSP中应用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1009,83 +1129,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/11/05/JSP连接数据库/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JSP-Servlet" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/03/JSP-Servlet/">JSP/Servlet</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/03/JSP-Servlet/" class="archive-article-date">
-  	<time datetime="2019-11-03T07:02:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一、相同点： </p>
-<p>1 处理后台逻辑，作为mvc控制； 2 9个内置对象(request、response、session、application、page、out、 </p>
-<p>config、pageContext、exception)，内置对象作用域：page &lt; request/response &lt; session &lt; application。 </p>
-<p>page.setAttribute(“username”,”sam”); String id = page.getAttribute(“username”); </p>
-<p>request.setAttribute(“username”,”sam”); String id = request.getAttribute(“username”); </p>
-<p>session.setAttribute(“username”,”sam”); String id = session.getAttribute(“username”); </p>
-<p>application.setAttribute(“username”,”sam”); String id = application.getAttribute(“username”); </p>
-<p>3 都可用Java语言。 </p>
-<p>二、不同点： </p>
-<p>1 JSP可作为前端显示页面，Servlet只能作后台控制； 2 JSP可内嵌html、EL、JSTL和Java，而Servlet只能有 </p>
-<p>Java； 3 JSP控制不需要项目中去注册、而Servlet必须注册(web.xml/注解) 4 JSP常作为小型项目，Servlet常用作 </p>
-<p>框架类的大型项目； </p>
-<p>拓展： </p>
-<p>Spring、SpringMVC(Struts2.0)、MyBatis SSM </p>
-<p>SpringBoot SpringCloud</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/03/JSP-Servlet/">展开全文 >></a>
         </p>
       
 
