@@ -152,6 +152,92 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-jsp知识点总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/08/jsp知识点总结/">jsp知识点总结</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/08/jsp知识点总结/" class="archive-article-date">
+  	<time datetime="2019-12-08T05:11:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、MVC模式中，M指的是<strong>__</strong>，V指的是<strong>__</strong>，C指的是<strong>____</strong></p>
+<p>答案：Model,View,Controller（模型，视图，控制器）</p>
+<p>2、JDBC连接数据库的步骤依次为<strong><strong>_____</strong></strong>、<strong><strong>____</strong></strong>、<strong><strong>___</strong></strong>、<strong><strong>____</strong></strong>、<strong><strong><strong>___</strong></strong></strong>。</p>
+<p>答案：加载JDBC驱动、与数据库建立连接、发送 SQL 语句，并得到返回结果、处理返回结果、 数据库访问结束后，进行资源释放</p>
+<p>3、JSP文件请求需要经过<strong><strong>___</strong></strong>、<strong><strong>__</strong></strong>、<strong><strong>___</strong></strong>三个阶段</p>
+<p>答案：翻译阶段 编译阶段 执行阶段</p>
+<p>4、URL由<strong>____</strong>、<strong>____</strong>、<strong>___</strong>组成</p>
+<p>答案：协议 主机名（有时包含端口号） 路径</p>
+<p>5、转发是使用RequestDispatcher对象的<strong><strong><strong>_____</strong></strong></strong>方法</p>
+<p>答案：forward()</p>
+<p>6、客户端用<strong><strong>_____</strong></strong>对象存放数据</p>
+<p>答案：cookie</p>
+<p>7、Servlet的生命周期方法有<em>init__,<strong><em>service___</em></strong>,__destroy</em></p>
+<p>8、Servlet中重定向使用的是<strong>response_</strong>对象的_sendRedirect__方法</p>
+<p>9、编写Servlet时只需要根据应用的需要，重写<strong>doGet_或者</strong>doPost__方法即可</p>
+<p>10、在JSP中使用JavaBean的标签是_ &lt;jsp:useBean class BeanName id=Bean 实例&gt;<strong>， 其中id的用途。<br>11、JavaBean中用- -组set 方法设置Bean的私有属性值，get 方法获得Bean的私有属性值。set 和get 方法。名称与属性名称之间必须对应，也就是:如果属性名称为xxx，那么set和get方法的名称必须为setXxx()<em>和  getXxx()<em>。<br>12、Servlet 中使用Session对象的步骤为:调用HttpServletRequest.getSession( 得到Session对象，查看Session对象，在会话中保存数据。<br>13、jsp主要内置对象有： application      、exception        、 pageContext         、  request        、 session  、_</em></em></strong>response_____out、config、page。<br>14、2、URL意思为<strong><strong><strong>_____</strong></strong></strong></p>
+<p>答案：统一资源定位符</p>
+<p>15、application对象是 代表应用程序上下文，它允许JSP页面与包括在同一应用程序中的任何Web组件共享信息  ，而session对象则是每个客户专用的。<br>16、如何执行一个线程安全的JSP?<br>只需增加如下指令<br>&lt;%@ page isThreadSafe=”false” %&gt; </p>
+<p>17、JSP如何处理HTML FORM中的数据?<br>通过内置的request对象即可，如下：<br>&lt;%<br>String item = request.getParameter(“item”);<br>int howMany = new Integer(request.getParameter(“units”)).intValue();<br>%&gt;  </p>
+<p>18、异常的处理，可在该方法的代码段中包含3类代码：    try      、   catch       和finally代码块。</p>
+<p>19、一个Bean由三部分组成：   实现java.io.serializable接口、  提供无参数的构造方法  、  提供getter（）和setter（）方法访问它的属性  。<br>20、Tomcat服务器的默认端口是   8080   。怎样修改tomcat的端口__在Tomcat下打开conf文件夹找到server.xml文件用记事本打开在<connector port="”8080”">中把8080更改即可。</connector></p>
+<hr>
+<p>：Servlet的生命周期主要由3个过程组成。<br>1、init()方法：服务器初始化Servlet。<br>2、service()方法：初始化完毕，Servlet对象调用该方法相应客户的请求。<br>3、destroy()方法：调用该方法消灭Servlet对象。<br>9. Java servlet API中forward() 与redirect()的区别？</p>
+<p>答:前者仅是容器中控制权的转向，在客户端浏览器地址栏中不会显示出转向后的地址；后者则是完全的跳转，浏览器将会得到跳转的地址，并重新发送请求链接。这样，从浏览器的地址栏中可以看到跳转后的链接地址。所以，前者更加高效，在前者可以满足需要时，尽量使用forward()方法，并且，这样也有助于隐藏实际的链接。在有些情况下，比如，需要跳转到一个其它服务器上的资源，则必须使用sendRedirect()方法。<br>a) forward：requset.getRequsetDispatcher(“/<strong><em>.jsp”).forward(request,response)<br>　　redirect：response.sendRedirect(“/</em></strong>.jsp”)<br>b)forward是服务器端发起的请求；redirect是客户端发起的请求；<br>c) forward只有一次请求；redirect会产生2次请求。<br>d) forward数据会同时转发过去;redirect数据不会同时传递过去。<br>3、在程序里怎样注册Servlet.<br>配置文件添加信息：<br>Web.xml中创建servlet标签。<br><servlet><br>    <display-name>显示名字</display-name><br><servlet-name>名字</servlet-name><br><servlet-class>项目中包名、类名</servlet-class><br></servlet><br><servlet-mapping><br><servlet-name>名字</servlet-name><br>    <url-pattern>url地址</url-pattern><br></servlet-mapping><br>注解的方式：<br>@WebServlet(“/XXServlet”)<br>Public class XXServlet extends HttpServlet{}<br>2、JSP有哪些内置对象?作用分别是什么?<br>application对象代表应用程序上下文，它允许JSP页面与包括在同一应用程序中的任何Web组件共享信息。<br>Config对象允许将初始化数据传递给一个JSP页面<br>Exception对象含有只能由指定的JSP“错误处理页面”访问的异常数据。<br>Out对象代表提供输出流的访问<br>Page对象代表JSP页面对应的Servlet类实例<br>PageContext对象是Jsp页面本身的上下文，它提供唯一一组方法来管理具有不同作用域的属性<br>Request对象提供对Http请求数据的访问，同时还提供用于加入特定请求数据的上下文<br>6、如何使用 JSP 读取 表单数据？<br>答：JSP根据情况自动解析并使用下面的方法处理表单数据：<br>    getParameter()：调用 request.getParameter() 方法来获取一个表单参数的值。<br>    getParameterValues()：如果参数出现多次，调用该方法，返回多个值，例如复选框。<br>、在 HTTP 协议中 GET 和 POST 的区别？<br>答：GET 方法发送添加到页面请求的编码后的用户信息。页面和编码信息是通过？符号分开的。这种请求方式直接将请求信息暴露在URL中。<br>POST 方法将信息打包的方式与 GET 方法时一样的，但是而是将它放在 URL 中？的后面作为文本字符串进行发送，将它作为一个独立的消息发送。post请求方式将请求信息放置在报文体中，想获得请求信息必须解析报文<br>20、你如何成功控制从一个JSP页面到另一个？<br>答：使用下面的方法来成功控制请求从一个servlet到另一个servlet或一个JSP到另一个JSP：<br>    使用RequestDispatcher对象的forward方法完成控制。<br>    使用response.sendRedirect方法。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/08/jsp知识点总结/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JSP12-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1010,125 +1096,6 @@ n            (n-1)*10            n*10-1
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/11/06/JSP项目常见问题解决方案1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JSP连接数据库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/05/JSP连接数据库/">JSP连接数据库</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/05/JSP连接数据库/" class="archive-article-date">
-  	<time datetime="2019-11-05T01:08:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>static final String DRIVER = “com.mysql.jdbc.Driver”;<br>    static final String URL = “jdbc:mysql://127.0.0.1:3306/his”;<br>    static final String USERNAME = “root”;<br>    static final String PWD = “root”;</p>
-<pre><code>protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    // TODO Auto-generated method stub
-    request.setCharacterEncoding(&quot;utf-8&quot;);//request
-    response.setContentType(&quot;text/html;charset=utf-8&quot;);//response
-    String id=request.getParameter(&quot;username&quot;);////
-    String pwd=request.getParameter(&quot;password&quot;);//
-    Connection connection = null;
-    Statement statement = null;
-    ResultSet rs =null;
-    try{        
-      Class.forName(DRIVER);
-      connection = DriverManager.getConnection(URL,USERNAME,PWD);
-       statement = connection.createStatement();
-       String sql = &quot;select * from user;&quot;; 
-       rs = statement.executeQuery(sql);
-       while (rs.next()) {
-           if (request.getParameter(&quot;username&quot;).equals(rs.getString(&quot;username&quot;))&amp;&amp;
-                      request.getParameter(&quot;password&quot;).equals(rs.getString(&quot;password&quot;))) {
-                request.getRequestDispatcher(&quot;index1.jsp&quot;).forward(request, response);
-            } else {
-                response.getWriter().print(&quot;用户名或密码有误，请重新输 入！&quot;);
-            }
-
-    }
-    }
-    catch (ClassNotFoundException e){        
-        System.out.println(e.getMessage());
-        System.exit(0);
-    }
-    catch (SQLException e){            
-        System.out.println(e.getMessage());
-        System.exit(0);
-    }
-    catch (Exception e){        
-    }
-    finally {
-        try {
-            statement.close();
-        } catch (SQLException e) {
-            // TODO 自动生成的 catch 块
-            e.printStackTrace();
-        }
-        try {
-            connection.close();
-        } catch (SQLException e) {
-            // TODO 自动生成的 catch 块
-            e.printStackTrace();
-        }
-        try {
-            rs.close();
-        } catch (SQLException e) {
-            // TODO 自动生成的 catch 块
-            e.printStackTrace();
-        }</code></pre><p><a href="https://wmg0726.github.io\C:\imgs1\1.png" target="_blank" rel="noopener">https://wmg0726.github.io\C:\imgs1\1.png</a></p>
-<p><a href="https://wmg0726.github.io\C:\imgs1\2.png" target="_blank" rel="noopener">https://wmg0726.github.io\C:\imgs1\2.png</a></p>
-<p><a href="https://wmg0726.github.io\C:\imgs1\3.png" target="_blank" rel="noopener">https://wmg0726.github.io\C:\imgs1\3.png</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/05/JSP连接数据库/">展开全文 >></a>
         </p>
       
 
