@@ -152,6 +152,76 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JSP，EL-JSTL" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/17/JSP，EL-JSTL/">JSP，EL,JSTL</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/17/JSP，EL-JSTL/" class="archive-article-date">
+  	<time datetime="2019-12-17T00:26:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> jsp的指令 page include tiglib &lt;%@ page … %&gt;<br>jsp标签 </p>
+<pre><code>1）页面包含（动态包含）：&lt;jsp:include page=&quot;被包含的页面&quot;/&gt;
+
+2）请求转发：&lt;jsp:forward page=&quot;要转发的资源&quot; /&gt;</code></pre><p> EL从四个域中获得某个值$(key);</p>
+<pre><code>---同样是依次从pageContext域，request域，session域，application域中获取属性，</code></pre><p>16、什么是cookie？什么是session？session和cookie的区别<br>a)Cookie是客户端保存用户信息的一种机制，用来记录用户的一些信息，它的过期时间可以任意设置，如果不主动清除，很长一段时间都能保留<br>b) Session是在无状态的HTTP协议下，服务端记录用户状态时用于标识具体用户的机制，它是在服务端保存的用来跟踪用户的状态的数据结构，可以保存在文件、数据库、或者集群中。</p>
+<p>17、request.getAttribute()和request.getParameter()区别<br>a) 都是HttpServletRequest中的方法，用来传递数据的<br>b) getParameter（）：响应的是web客户端向web服务端通过点击链接或提交按钮传递数据，代表HTTP请求数据；获取的是post/get传递的参数值<br>　　? getAttribute（）：是获取对象容器中的数据，获取的是session的值<br>c)????? getParameter（）：只能得到String类型数据<br>　　? getAttribute（）：可以接受String类型，也可以是对象<br>JSTL核心库的常用标签</p>
+<pre><code>1）&lt;c:if&gt;标签
+
+2）&lt;c:for&gt;标签</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/17/JSP，EL-JSTL/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-EL内置对象和Ajax" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1027,68 +1097,6 @@ n            (n-1)*10            n*10-1
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/11/06/JSP项目常见问题解决方案2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HttpServlet导包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/06/HttpServlet导包/">_HttpServlet导包</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/06/HttpServlet导包/" class="archive-article-date">
-  	<time datetime="2019-11-06T01:03:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/06/HttpServlet导包/">展开全文 >></a>
         </p>
       
 
